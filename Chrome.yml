@@ -5,6 +5,9 @@ ingredients:
   packages:
     - libgconf2-4
     - libre2-dev
+    - libjsoncpp-dev
+    - libwebp-dev
+    - libminizip-dev
   dist: trusty
   sources: 
     - deb http://us.archive.ubuntu.com/ubuntu/ focal main universe
