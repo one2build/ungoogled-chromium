@@ -22,8 +22,8 @@ RUN rm ungoogled-chromium-build-deps_*
 
 RUN ./debian/scripts/setup local-src
 
-COPY flags.gn /tmp/flags.fn
-RUN cat /tmp/flags.gn >> /build/build/src/out/Release/args.gn
+COPY flags.gn /tmp/flags.gn
+RUN cat /tmp/flags.gn >> /build/build/src/debian/ungoogled-upstream/ungoogled-chromium/flags.gn
 
 RUN dpkg-buildpackage -b -uc
 
