@@ -20,9 +20,10 @@ RUN ./debian/scripts/setup debian
 RUN yes | mk-build-deps -i debian/control
 RUN rm ungoogled-chromium-build-deps_*
 
+RUN ./debian/scripts/setup local-src
+
 COPY flags.gn /tmp/flags.fn
 RUN cat /tmp/flags.gn >> /build/build/src/out/Release/args.gn
 
-RUN ./debian/scripts/setup local-src
-
 RUN dpkg-buildpackage -b -uc
+
