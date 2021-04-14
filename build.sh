@@ -1,7 +1,7 @@
 rm -rf output
 mkdir -p output
 
-# docker build -t one2build/ungoogled-chromium .
+docker build -t one2build/ungoogled-chromium .
 docker run -v `pwd`/output:/output --net host one2build/ungoogled-chromium sh -c \
   "ls && cp -r /build/out/* /output && chown -R 1000:1000 /output"
 
