@@ -8,6 +8,7 @@ ingredients:
     - libjsoncpp-dev
     - libwebp-dev
     - libminizip-dev
+    - libpulse-dev
   dist: trusty
   sources: 
     - deb http://us.archive.ubuntu.com/ubuntu/ focal main universe
