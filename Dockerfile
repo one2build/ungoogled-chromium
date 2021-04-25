@@ -1,8 +1,8 @@
 FROM ubuntu:20.04
 
-WORKDIR /build
-
 RUN mkdir -p /build/out
+
+WORKDIR /build
 
 # BUILD
 
@@ -14,8 +14,8 @@ RUN apt-get update --fix-missing && apt-get -y upgrade && apt-get install -y \
 
 # Step 2) Clone ungoogled chromium debian
 RUN git clone --recurse-submodules https://github.com/ungoogled-software/ungoogled-chromium-debian.git
-
-RUN git -C ungoogled-chromium-debian checkout --recurse-submodules ubuntu_focal
+RUN git -C ungoogled-chromium-debian checkout ubuntu_focal
+RUN git -C ungoogled-chromium-debian submodule update --init --recursive
 
 # Step 3) Build the project
 RUN mkdir -p build/src
